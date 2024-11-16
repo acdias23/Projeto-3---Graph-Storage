@@ -16,7 +16,7 @@ NEO4J_URI=    # adicionar a URI fornecida pelo neo4j
 NEO4J_USERNAME=   #adicionar o USERNAME fornecido pelo neo4j
 NEO4J_PASSWORD=   #adicionar a PASSWORD fornecida pelo neo4j 
 AURA_INSTANCEID=   #adicionar a INSTANCEID que se encontra no começo da URI
-AURA_INSTANCENAME=  # adicionar a INSTANCIANAme indicada pelo neo4j 
+AURA_INSTANCENAME=  # adicionar a INSTANCIANAME indicada pelo neo4j 
 ```
 
 ## Grafos
