@@ -11,7 +11,7 @@ Sofia Fernandes RA: 22.122.082-5
 
 ## Instruções para rodar o banco
 ```
-Setar as varáveis de ambiente no arquivo .evn:
+Setar as varáveis de ambiente no arquivo .env:
 NEO4J_URI=    # adicionar a URI fornecida pelo neo4j
 NEO4J_USERNAME=   #adicionar o USERNAME fornecido pelo neo4j
 NEO4J_PASSWORD=   #adicionar a PASSWORD fornecida pelo neo4j 
