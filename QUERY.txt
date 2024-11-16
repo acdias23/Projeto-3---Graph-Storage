@@ -1,0 +1,33 @@
+1:
+MATCH (a:Aluno {aluno_id: "2aea0f51-f956-4199-be69-32e6af1c7de8"})-[r:CURSOU]->(d:Disciplina)
+RETURN 
+    d.disciplina_id AS disciplina_id,  
+    d.nome AS disciplina_nome, 
+    r.semestre AS semestre, 
+    r.ano AS ano, 
+    r.nota_final AS nota_final
+
+2:
+MATCH (p:Professor {professor_id: "fa0f9521-96da-49d4-a23b-17d6698a6e19"}), (d:DisciplinaMinistrada)
+WHERE d.professor_id = p.professor_id
+RETURN d.disciplina_id AS disciplina_id, d.semestre AS semestre, d.ano AS ano, p.professor_id
+
+3:
+MATCH (a:Aluno)-[r:CURSOU]->(d:Disciplina)
+MATCH (a)-[:ESTUDA_EM]->(c:Curso)
+WHERE r.semestre = 1 AND r.ano = 2003 AND r.nota_final > 5
+RETURN a.nome AS nome, a.aluno_id AS aluno_id, c.curso_id AS curso_id, 
+       d.disciplina_id AS disciplina_id, r.nota_final AS nota_final, 
+       r.semestre AS semestre, r.ano AS ano
+ORDER BY a.aluno_id, d.disciplina_id
+
+4: 
+MATCH (d:Departamento)-[:CHEFIA]->(p:Professor)
+RETURN p.professor_id AS chefe_id, d.nome AS nome
+LIMIT 5
+
+5:
+MATCH (g:GrupoTCC)
+WHERE g.aluno1_id IS NOT NULL AND g.aluno2_id IS NOT NULL AND g.aluno3_id IS NOT NULL AND g.orientador IS NOT NULL
+RETURN g.tcc_id AS tcc_id, g.aluno1_id AS aluno1_id, g.aluno2_id AS aluno2_id, g.aluno3_id AS aluno3_id, g.orientador AS orientador
+
